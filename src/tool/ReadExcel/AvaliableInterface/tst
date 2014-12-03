@@ -1,0 +1,11 @@
+
+String attrTypeName = "poiExtInfo";
+Integer poiId=6529381;
+Integer attrId = 101082;
+String attrName = "officialBrand";
+String attrDesc = null;
+String attrValue = "如家";
+String attrValueInfo = null;
+Integer attrTypeId = 101001;
+
+ 
