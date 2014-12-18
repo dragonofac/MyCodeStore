@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.blogsys.supporter.book.mapper">
+    <resultMap id="AllInfoOfBook" type="com.blogsys.supporter.Domain.BookInfo">
+        <result column="ISBN" property="ISBN" jdbcType="VARCHAR"/>
+        <result column="bookname" property="bookname" jdbcType="VARCHAR"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectAll"  resultMap="AllInfoOfBook">
+        select * from bookinfo
+    </select>
+
+</mapper>
