@@ -24,6 +24,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-dao:2.0.6" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.34" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.github.tomakehurst:wiremock:standalone:1.53" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">

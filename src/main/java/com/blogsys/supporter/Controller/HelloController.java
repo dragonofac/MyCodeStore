@@ -18,13 +18,12 @@ public class HelloController {
 		model.addAttribute("message", "Hello world!");
 		return "hello";
 	}
-	@RequestMapping(value = "/xx")
+	@RequestMapping(value = "/test",method = RequestMethod.GET)
 	public ModelAndView login(){
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("welcome"); //返回的文件名
 
 		mav.addObject("message","Nope kitty");
-
 		//List
 		List<String> list = new ArrayList<String>();
 		list.add("java");

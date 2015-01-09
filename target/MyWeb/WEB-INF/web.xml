@@ -17,7 +17,6 @@
 		<param-value>classpath*:applicationContext.xml</param-value>
 	</context-param>
 
-
     <servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -27,6 +26,57 @@
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- wiremock 依赖-->
+	<listener>
+		<display-name>wiremock-startup-listener</display-name>
+		<listener-class>com.github.tomakehurst.wiremock.servlet.WireMockWebContextListener</listener-class>
+		<!--<description>Loads WireMock and populates the servlet context with its services</description>-->
+	</listener>
+
+	<context-param>
+		<param-name>WireMockFileSourceRoot</param-name>
+		<param-value>/WEB-INF/wiremock</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>verboseLoggingEnabled</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>wiremock-mock-service-handler-servlet</servlet-name>
+		<servlet-class>com.github.tomakehurst.wiremock.jetty6.Jetty6HandlerDispatchingServlet</servlet-class>
+		<init-param>
+			<param-name>RequestHandlerClass</param-name>
+			<param-value>com.github.tomakehurst.wiremock.http.StubRequestHandler</param-value>
+		</init-param>
+		<init-param>
+			<param-name>mappedUnder</param-name>
+			<param-value>/mapping</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>wiremock-mock-service-handler-servlet</servlet-name>
+		<url-pattern>/mapping/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>wiremock-admin-handler-servlet</servlet-name>
+		<servlet-class>com.github.tomakehurst.wiremock.jetty6.Jetty6HandlerDispatchingServlet</servlet-class>
+		<init-param>
+			<param-name>RequestHandlerClass</param-name>
+			<param-value>com.github.tomakehurst.wiremock.http.AdminRequestHandler</param-value>
+		</init-param>
+		<init-param>
+			<param-name>mappedUnder</param-name>
+			<param-value>/mapping/__admin</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>wiremock-admin-handler-servlet</servlet-name>
+		<url-pattern>/mapping/__admin/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>

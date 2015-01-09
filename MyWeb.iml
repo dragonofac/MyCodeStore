@@ -57,5 +57,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-dao:2.0.6" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.34" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: com.github.tomakehurst:wiremock:standalone:1.53" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.6" level="project" />
   </component>
 </module>

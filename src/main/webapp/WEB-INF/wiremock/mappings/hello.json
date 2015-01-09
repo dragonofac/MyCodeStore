@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/api/mztest"
+  },
+  "response": {
+    "status": 404,
+    "bodyFileName": "mytest.json",
+    "headers": {
+      "Content-Type": "application/json",
+      "Cache-Control": "max-age=86400"
+    }
+  }
+}
