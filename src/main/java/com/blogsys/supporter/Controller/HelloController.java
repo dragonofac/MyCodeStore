@@ -13,7 +13,7 @@ import java.util.Map;
 
 @Controller
 public class HelloController {
-	@RequestMapping(value = "/",method = RequestMethod.GET)
+	@RequestMapping(value = "/ddd",method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("message", "Hello world!");
 		return "hello";
@@ -39,4 +39,15 @@ public class HelloController {
 		mav.addObject("map",map);
 		return mav;
 	}
+
+	/**
+	 * 模拟url的重定向
+	 * @return
+	 */
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	public ModelAndView method() {
+		return new ModelAndView("redirect:" + "/mapping/api/mytest");
+
+	}
+
 }
