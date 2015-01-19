@@ -7,7 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 /**
- * Created by mzlin on 15/1/9.
+ *
  */
 public class wmtest {
 
